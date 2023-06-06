@@ -56,7 +56,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-sandrabergstrom-drfapi-jzbunvewoxx.ws-eu98.gitpod.io',
-    'https://drf-api-ci-sb.herokuapp.com/'
+    'drf-api-ci-sb.herokuapp.com',
 
 ]
 
