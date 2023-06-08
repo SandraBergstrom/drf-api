@@ -14,7 +14,6 @@ import re
 from pathlib import Path
 import os
 import dj_database_url
-import corsheaders
 
 if os.path.exists('env.py'):
     import env
@@ -97,9 +96,6 @@ INSTALLED_APPS = [
     'followers',
 ]
 SITE_ID = 1
-
-CORS_ALLOWED_HEADERS = ['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
-CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
