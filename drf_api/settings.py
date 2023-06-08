@@ -99,6 +99,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 CORS_ALLOWED_HEADERS = ['Accept', 'Accept-Language', 'Content-Language', 'Content-Type']
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
