@@ -3,7 +3,6 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from cloudinary.models import CloudinaryField
 
 """
 This needed to get around a bug
@@ -23,9 +22,8 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=500, blank=True)
     content = models.TextField(blank=True)
-    image = CloudinaryField(
-        'image',
-        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1685538683/default/default_profile_vbamal.jpg'
+    image = models.ImageField(
+        upload_to='images/', default='../chef_el1rfp'
     )
 
     class Meta:
