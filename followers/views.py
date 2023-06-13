@@ -15,12 +15,12 @@ class FollowerList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    def create(self, request, *args, **kwargs):
-        try:
-            return super().create(request, *args, **kwargs)
-        except ValidationError as error:
-            print("Validation error:", error.detail)
-            return Response({"error": error.detail}, status=status.HTTP_400_BAD_REQUEST)
+    # def create(self, request, *args, **kwargs):
+    #     try:
+    #         return super().create(request, *args, **kwargs)
+    #     except ValidationError as error:
+    #         print("Validation error:", error.detail)
+    #         return Response({"error": error.detail}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class FollowerDetail(generics.RetrieveUpdateDestroyAPIView):
