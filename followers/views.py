@@ -3,6 +3,8 @@ from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Followers
 from .serializers import FollowerSerializer
 from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
+from rest_framework import status
 
 
 class FollowerList(generics.ListCreateAPIView):
