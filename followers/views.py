@@ -12,6 +12,12 @@ class FollowerList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+    def create(self, request, *args, **kwargs):
+    try:
+        return super().create(request, *args, **kwargs)
+    except ValidationError as error:
+        print("Validation error:", error.detail)
+
 class FollowerDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = FollowerSerializer
